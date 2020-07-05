@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relogio</title>
+    <!--Inserindo CSS dentro do HTML-->
+<style>
+    #rel{
+        
+        text-align:center;
+        color:#0f0;/* cor do numero*/
+        font-weight: bold;
+        font-size: 80px;
+        width: 400px;
+        background-color: black;/*cor de fundo do relogio*/
+        margin-top: 250px;/* aqui esta colocando o relogio no centro*/
+        margin-left: 500px;/* aqui esta colocando o relogio no centro*/
+
+    }
+
+</style>
+
+
+</head>
+<body bgcolor="#FFD700">
+
+    <section>
+ <div id=tes>
+
+   <input type ="text" id="rel"/>
+</div>
+    </section>
+
+<script>
+  function relogio(){
+      var data = new Date ();
+      var hora = data.getHours();
+      var minuto = data.getMinutes();
+      var segundo = data.getSeconds();
+      // esse comando é para colocar o numero 0 antes dos numeros abaixo de 10
+      if(hora <10){
+          hora="0"+hora;
+          }
+          if(minuto <10){
+          minuto="0"+minuto;
+          }
+          if(segundo <10){
+          segundo="0"+segundo;
+          }
+
+      var horas = hora+":"+minuto+":"+segundo;
+      document.getElementById("rel").value =horas;
+      
+     
+
+ }
+ var tempo=setInterval(relogio,1000);
+
+    </script>
+    
+</body>
+</html>
